@@ -1,0 +1,44 @@
+body{
+    background-image: url(../images/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+#wrapper{
+    width: 1024px;
+    min-height: 700px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+div[id^='block-'] {
+   width: 225px;
+    height: 225px;
+    margin: 10px;
+    display: block;
+    float: left;
+    border: 2px solid #000;
+}
+#giraffe-talk{
+    position: absolute;
+    top: 80px;
+    left: 720px;
+    display: none;
+}
+#lion-talk{
+    position: absolute;
+    top: 550px;
+    left: 400px;
+    display: none;
+}
+.bubble {
+    font-family: 'Fredoka One', cursive;
+    height: 100px;
+  	width: 300px;
+  	background-color: white;
+  	border-radius: 30px;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
