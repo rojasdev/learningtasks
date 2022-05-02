@@ -1,19 +1,40 @@
+<?php
+$param = (isset($_GET['load']) && $_GET['load'] != '') ? $_GET['load'] : '';
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>NAME MO WEB PORTFOLIO</title>
+        <title>PHP Demo</title>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
     </head>
     <body>
-      <h1>NAME MO WEB YOUR FRIENDLY WEB DESIGNER</h1>
-      <h2>Previous Works</h2>
-      <ul>
-        <li><a href="/LT2" target="black">Learning Task 2.1</a></li>
-          <li><a href="/LT3" target="black">Learning Task 3.1</a></li>
-          <li><a href="/CLE1MT" target="black">CLE1 MT</a></li>
-          <li><a href="/LT4" target="black">Learning Task 4.1</a></li>
-          <li><a href="/LT5" target="black">Learning Task 5.1</a></li>
-          <li><a href="/LT6" target="black">Learning Task 6.1</a></li>
-      </ul>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5ch94AaPZRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div id="wrapper">
+            <div id="menu">
+             <ul class="navigation">
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="index.php?load=news">News</a></li>
+                  <li><a href="index.php?load=contact">Contact</a></li>
+                  <li><a href="index.php?load=about">About</a></li>
+                </ul>
+            </div>
+           <div id="content">
+            <?php
+               switch($param){
+                   case 'news':
+                       include 'news.php';
+                   break;
+                   case 'contact':
+                        include 'contact.php';
+                   break;
+                   case 'about':
+                       include 'about.php';
+                   break;
+                   default:
+                        include 'home.php';
+                   break;
+               }
+            ?>
+           </div>
+        </div>
     </body>
 </html>
